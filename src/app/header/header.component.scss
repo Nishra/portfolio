@@ -1,0 +1,8 @@
+.sticky-top {
+  z-index: 1000; /* Ensures the navbar stays above other content */
+  box-shadow: 0 4px 2px -2px gray; /* Adds shadow for a better effect */
+}
+.bg-colour {
+  background-color: #008080 !important;
+  color: white !important;
+}

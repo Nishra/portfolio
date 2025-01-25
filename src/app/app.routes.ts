@@ -6,6 +6,5 @@ export const routes: Routes = [
   { path: 'about', component: HomeComponent }, // Use HomeComponent but navigate to the "About" section
   { path: 'skills', component: HomeComponent }, // Navigate to the "Skills" section
   { path: 'education', component: HomeComponent }, // Navigate to the "Education" section
-  { path: 'projects', component: HomeComponent }, // Navigate to the "Projects" section
   { path: 'contact', component: HomeComponent }, // Navigate to the "Contact" section
 ];

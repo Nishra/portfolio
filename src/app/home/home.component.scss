@@ -1,0 +1,321 @@
+@import "../../styles.scss";
+
+.section {
+  color: white;
+  background-color: black;
+  min-height: auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-item {
+  margin: 10px;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: #ccc;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+// Home Section
+
+#home {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #008080;
+  text-align: right;
+}
+
+/* Style for the typing animation container */
+.typing-animation h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid white; /* Adds cursor-like effect */
+  width: 0; /* Initially no width */
+  animation:
+    typing 4s steps(40) 1s forwards,
+    blink 0.75s step-end infinite;
+}
+
+/* Typewriter effect */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Cursor blink effect */
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+///About
+.about-para {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+.current-year {
+  background-color: #008080;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  position: relative;
+}
+.timeline {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 30px;
+  overflow-x: auto;
+  padding: 20px 0;
+  border-bottom: 2px solid #008080; /* Green line */
+}
+
+.timeline-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  position: relative;
+}
+
+.timeline-item:hover {
+  background-color: #008080;
+  color: white;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 20px;
+  background-color: #008080; /* Green line under each year */
+}
+
+.description {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.description h3,
+.description p {
+  margin: 5px 0;
+}
+
+/// ////
+
+///SKILLS
+.skills-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skills-icons i {
+  opacity: 0;
+  animation: flowIn 2s forwards;
+  font-size: 3rem; /* Increase icon size */
+  color: #008080; /* Set icon color to Teal */
+  font-weight: bold; /* Make the text bold */
+}
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  width: 150px; /* Adjust width to control line breaks */
+}
+
+@keyframes flowIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/// SKILLS
+
+#contact {
+  padding: 40px; /* Adjust padding for space inside */
+  background-color: #008080; /* Dark background for footer */
+  color: white;
+  position: relative; /* For positioning */
+  bottom: 0;
+  width: 100%; /* Ensure full width */
+  min-height: 120px; /* Set minimum height for the footer */
+  display: flex;
+  justify-content: space-between; /* Space out content horizontally */
+  align-items: center; /* Vertically center content */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Allow wrapping if space is tight */
+}
+
+/* Contact Information Styling */
+.contact-info {
+  font-size: 16px;
+  margin-right: 40px; /* Add space between contact info and social media */
+}
+
+/* Social Media Links Styling */
+.social-media {
+  display: flex;
+  justify-content: flex-start; /* Align icons to the left */
+  margin-top: 0; /* Remove extra margin */
+}
+
+.social-icon {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.social-icon:hover {
+  color: #ddd; /* Change on hover */
+}
+
+.social-icon i {
+  margin-right: 8px;
+}
+
+/* Footer Note Styling */
+.footer-note {
+  font-size: 14px;
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width */
+  margin-top: 20px;
+}
+
+/// Education
+.education-timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+  padding: 20px;
+}
+
+.timeline-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  padding-left: 50px; /* Space for the timeline */
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -25px; /* Position the dot on the left side of the line */
+  width: 20px;
+  height: 20px;
+  background-color: #008080; /* Purple color for the dot */
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.timeline-content h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  color: #34495e;
+  margin: 5px 0;
+}
+
+.institution {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.year,
+.grade {
+  font-weight: 500;
+}
+
+.year {
+  color: white;
+}
+
+.grade {
+  color: #e74c3c;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #008080;
+}
+
+.timeline-item:last-child::before {
+  height: 0;
+}
+
+/* Image styling */
+.timeline-image {
+  width: auto;
+  height: 357px;
+}
+
+///

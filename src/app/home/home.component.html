@@ -1,0 +1,142 @@
+<!-- Sections with black background and white text -->
+<div>
+  <section
+    id="home"
+    class="section d-flex justify-content-between align-items-center"
+  >
+    <div col-md-6 text-start>
+      <img src="../../assets/home image.jpg" class="img-fluid" />
+    </div>
+    <div col-md-6 text-end>
+      <h1 style="font-size: 400px">Hi</h1>
+      <p style="font-size: 50px">I'm Nishra Nasar</p>
+      <div class="typing-animation">
+        <p style="font-size: 4rem; font-weight: bold" id="typed-role"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h1>About</h1>
+    <p class="about-para">
+      I have been in the industry for almost {{ yearsOfExperince }} years now
+      and have developed software solutions across diverse domains, including
+      Geographic Information Systems, the Finance Sector, the Apparel Industry,
+      School Catering Systems, and Stock Calculation.
+    </p>
+    <div class="timeline">
+      <div
+        class="timeline-item"
+        *ngFor="let item of descriptions"
+        (click)="selectedYear = item.year"
+      >
+        <span
+          class="year"
+          [ngClass]="{ 'current-year': item.year === selectedYear }"
+          >{{ item.year }}</span
+        >
+      </div>
+    </div>
+    <div class="description" *ngIf="selectedYear">
+      <h3>{{ getData(selectedYear, "desig") }}</h3>
+      <p>{{ getData(selectedYear, "comp") }}</p>
+      <p>{{ getData(selectedYear, "descrip") }}</p>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h1>Skills</h1>
+    <div class="skills-icons">
+      <div class="skill" *ngFor="let skill of skills">
+        <i [ngClass]="skill.class"></i>
+        <span> {{ skill.name }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  <section id="projects" class="section">
+    <h1>Projects</h1>
+    <p>Some of the projects I have worked on.</p>
+  </section> -->
+
+  <section id="publications" class="section">
+    <h1>Publications</h1>
+    <p>Some of the projects I have worked on.</p>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" *ngFor="let article of articles">
+        <div class="card d-flex flex-column" style="height: 100%">
+          <img
+            [src]="article.imageUrl"
+            class="card-img-top"
+            alt="Image not found"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ article.title }}
+              <a [href]="article.link" target="_blank">
+                <i class="bi bi-link-45deg"></i>
+              </a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <h1>Education / Certificates</h1>
+    <section id="education" class="education-timeline">
+      <div class="timeline-container">
+        <div class="timeline-item" *ngFor="let item of educationData">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>{{ item.title }}</h3>
+            <p class="institution">Awarding Body: {{ item.institution }}</p>
+            <p class="year">Year: {{ item.year }}</p>
+            <p class="grade">Grade: {{ item.grade }}</p>
+            <img
+              [src]="item.image"
+              alt="{{ item.title }}"
+              class="timeline-image img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="contact-info">
+      <h2>Contact Me</h2>
+      <p>If you have any questions, feel free to reach out!</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Phone:</strong> {{ mobileNumber }}</p>
+    </div>
+
+    <div class="social-media">
+      <a
+        href="https://www.linkedin.com/in/nishranasar"
+        target="_blank"
+        class="social-icon"
+      >
+        <i class="bi bi-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/Nishra" target="_blank" class="social-icon">
+        <i class="bi bi-github"></i> GitHub
+      </a>
+      <a
+        href="https://nishranasar.medium.com/"
+        target="_blank"
+        class="social-icon"
+      >
+        <i class="bi bi-twitter"></i> Medium
+      </a>
+    </div>
+
+    <!-- Copyright Text -->
+    <p class="footer-note">
+      &copy; {{ currentYear }} Nishra Nasar. All Rights Reserved.
+    </p>
+  </section>
+</div>

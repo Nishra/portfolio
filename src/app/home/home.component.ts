@@ -115,14 +115,14 @@ export class HomeComponent implements OnInit {
       institution: 'Microsoft',
       year: 2023,
       grade: 'Pass',
-      image: '../../assets/certificate.png',
+      image: 'assets/certificate.png',
     },
     {
       title: 'BSc (Hons) in Computer Science - Web and Mobile Development',
       institution: 'Kingston University',
       year: 2020,
       grade: 'First Class (Best Performer Award)',
-      image: '../../assets/degree.jpg',
+      image: 'assets/degree.jpg',
     },
   ];
 
